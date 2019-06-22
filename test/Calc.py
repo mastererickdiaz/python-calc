@@ -26,6 +26,11 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(5.0, result)
 
     """
+    def test_div_by_zero(self):
+        calc = Calc()
+        result = calc.div(25, 0)
+        self.assertEqual(5.0, result)
+
     def test_mod(self):
         calc = Calc()
         result = calc.mod(11, 3)
