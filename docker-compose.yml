@@ -1,0 +1,12 @@
+version: '2.3'
+
+services:
+
+  calc:
+    image: mario21ic/pycalc:v1.0
+    build: ./
+    volumes:
+      - ./src/:/app/
+    ports:
+      - 8080:8080
+

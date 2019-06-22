@@ -1,6 +1,6 @@
 import unittest
 
-from modules.calc import Calc
+from src.modules.calc import Calc
 
 
 class TestCalc(unittest.TestCase):

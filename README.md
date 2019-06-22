@@ -12,14 +12,26 @@ $ python main.py
 
 Run tests
 ```
-$ python -m unittest test/Calc.py
+$ python -m unittest test_calc.py -v
+$ python -m unittest discover -v 
 ```
 
 Code coverage
 ```
-$ coverage run main.py
-$ coverage run CalcTest.py
+$ coverage run src/main.py
+$ coverage run test_calc.py
 $ coverage report
 $ coverage html
 $ open htmlcov/index.html
+```
+
+Docker
+```
+$ docker build -t mario21ic/pycalc:v1.0 .
+$ docker run -p 8080:8080 mario21ic/pycalc:v1.0
+```
+
+Docker Compose
+```
+$ docker-compose up
 ```
