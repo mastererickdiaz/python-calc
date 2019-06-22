@@ -10,14 +10,6 @@ from bottle import post, get, put, delete
 from modules.calc import Calc
 
 
-
-"""
-import mysql.connector
-
-cnx = mysql.connector.connect(host='db', database='api_db', user='root', password='myclave')
-cursor = cnx.cursor()
-"""
-
 _allow_origin = '*'
 _allow_methods = 'PUT, GET, POST, DELETE, OPTIONS'
 _allow_headers = 'Authorization, Origin, Accept, Content-Type, X-Requested-With'
@@ -31,12 +23,16 @@ def enable_cors():
 
 
 @route('/', method=['GET'])
-def save_handler():
-    return "Hello"
+def home():
+    return "PyCalc v1.0"
+
+@get('/greeting/<name>')
+def greeting(name):
+    return "Hello %s!" % name
 
 
 @route('/add', method=['POST', 'OPTIONS'])
-def save_handler():
+def add_handler():
     if request.method == "OPTIONS":
       return json.dumps({'status': True})
 
@@ -58,7 +54,7 @@ def save_handler():
     return json.dumps({'status': status, 'result': result})
 
 @route('/sub', method=['POST', 'OPTIONS'])
-def save_handler():
+def sub_handler():
     if request.method == "OPTIONS":
       return json.dumps({'status': True})
 
@@ -76,7 +72,7 @@ def save_handler():
     return json.dumps({'status': status, 'result': result})
 
 @route('/mul', method=['POST', 'OPTIONS'])
-def save_handler():
+def mul_handler():
     if request.method == "OPTIONS":
       return json.dumps({'status': True})
 
@@ -94,7 +90,7 @@ def save_handler():
     return json.dumps({'status': status, 'result': result})
 
 @route('/div', method=['POST', 'OPTIONS'])
-def save_handler():
+def div_handler():
     if request.method == "OPTIONS":
       return json.dumps({'status': True})
 
