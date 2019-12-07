@@ -10,4 +10,5 @@ WORKDIR /app
 
 CMD ["python", "/app/main.py"]
 
-EXPOSE 8080
+EXPOSE 8081
+
